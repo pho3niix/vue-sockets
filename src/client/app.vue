@@ -1,9 +1,13 @@
 <template>
-    <div id="app">
+    <v-app>
+        <div id="app">
         <nav id="nav">
             <ul>
-                <li>
+                <!-- <li>
                 <router-link class="nav-link" to="/">Home</router-link>
+                </li> -->
+                <li>
+                <router-link class="nav-link" to="/">Socket.io</router-link>
                 </li>
                 <li>
                 <router-link class="nav-link" to="/about">About</router-link>
@@ -12,11 +16,19 @@
         </nav>
         <router-view/>
     </div>
+    </v-app>
 </template>
 
 <script>
     export default {
-        
+        name:'main',
+        components:{
+
+        },
+        data(){
+            return{
+            }
+        }
     }
 </script>
 
@@ -64,7 +76,7 @@
                  float: left;
                  margin-left: 2vw;
                  list-style: none;
-                 font-size: 1.4vw;
+                 font-size: 1vw;
              }
          }
     }

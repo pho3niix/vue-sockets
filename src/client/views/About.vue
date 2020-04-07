@@ -1,8 +1,8 @@
 <template>
     <div class="about">
         <h1>{{ about }}</h1>
-        <img id="hero" src="../assets/final.png" alt="">
         <h2>{{ hero }}</h2>
+        <img id="hero" src="../assets/final.png" alt="">
         <!-- <ul v-for="(index,item) of data" :key="item.id">
             <li>{{item.nombre}}</li>
             <li>{{item.apellido}}</li>
@@ -21,8 +21,8 @@
         },
         data() {
             return {
-                about: 'Welcome',
-                hero: 'Super Vue',
+                about: 'This is a Little example about',
+                hero: 'How implement Socket.io on a Vue application',
                 data:'',
                 name:'',
                 apellido:'',
@@ -58,8 +58,7 @@
         flex-direction: column;
         #hero{
             padding: 0;
-            margin: -6vh;
-            width: 40%;
+            width: 30%;
         }
     }
 </style>

@@ -5,10 +5,11 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
 import Vuex from 'vuex';
 import store from './store';
-import _ from 'lodash';
 import vuetify from './plugins/vuetify';
+import io from 'socket.io-client';
+export const socket = io('localhost:8080');
 
-Vue.use(VueAxios, axios, Vuex, _);
+Vue.use(VueAxios, axios, Vuex);
 
 Vue.config.productionTip = false;
 

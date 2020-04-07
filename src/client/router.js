@@ -3,20 +3,21 @@ import Router from 'vue-router';
 import notf from './components/notFound.vue';
 import About from './views/About.vue';
 import Hello from './components/Hello.vue';
+import socket from './views/socket.vue';
 
 Vue.use(Router);
 
 export default new Router({
     mode: 'history',
     routes: [
-        {
-            path: '/',
-            name: 'home',
-            component: Hello,
-            meta: {
-                title: 'Home'
-            }
-        },
+        // {
+        //     path: '/',
+        //     name: 'home',
+        //     component: Hello,
+        //     meta: {
+        //         title: 'Home'
+        //     }
+        // },
         {
             path:'/about',
             name:'about',
@@ -35,6 +36,13 @@ export default new Router({
         {
             path: '*',
             redirect: '/NotFound'
+        },
+        {
+            path: '/',
+            component: socket,
+            meta: {
+                title: 'Vue Chat'
+            }
         }
     ]
 });
