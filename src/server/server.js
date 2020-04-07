@@ -9,7 +9,7 @@ const app = express();
 // const normalizePort = require('normalize-port');
 
 //Set up default mongoose connection
-var mongoDB = 'mongodb://127.0.0.1:27017/sockets';//base de datos local
+var mongoDB = `${process.env.DB_HOST}sockets`;//base de datos local
 // var user = '';
 // var password = '';
 // var mongoDB = 'mongodb+srv://'+user+':'+password+'@cluster0-srdla.mongodb.net/users?retryWrites=true&w=majority';//conexion remota MongoDB Atlas
