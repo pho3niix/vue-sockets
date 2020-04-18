@@ -2,23 +2,18 @@
     <div class="about">
         <h1>{{ about }}</h1>
         <h2>{{ hero }}</h2>
-        <img id="hero" src="../assets/final.png" alt="">
-        <!-- <ul v-for="(index,item) of data" :key="item.id">
-            <li>{{item.nombre}}</li>
-            <li>{{item.apellido}}</li>
-            <li>{{item.i}}</li>
-        </ul> -->
-        <input type="text" v-model="name">
-        <input type="text" v-model="apellido">
     </div>
 </template>
 
 <script>
+    import {testMixin} from '../mixins/testMixin';
     export default {
         name: 'about',
         components: {
 
         },
+        //se puede llamar un mixin individual, ej: testMixin.methods.greet
+        mixins:[testMixin],
         data() {
             return {
                 about: 'This is a Little example about',
