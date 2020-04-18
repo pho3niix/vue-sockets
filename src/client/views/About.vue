@@ -2,6 +2,7 @@
     <div class="about">
         <h1>{{ about }}</h1>
         <h2>{{ hero }}</h2>
+        <img id="hero" src="../assets/final.png" alt="">
     </div>
 </template>
 
