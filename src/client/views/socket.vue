@@ -1,15 +1,15 @@
 <template>
     <div class="room">
         <ul>
-            <li>Enter a username into first input.</li>
-            <li>Enter a message.</li>
-            <li>Finally press enter or click on the button.</li>
-            <li>Open this app on new window and see the magic.</li>
+            <li>Type a username into first input.</li>
+            <li>Type a message into second input.</li>
+            <li>Open this app on new window.</li>
+            <li>Finally press enter or click the button and see the magic.</li>
         </ul>
         <form @submit.prevent="sendMessage">
             <v-text-field ref="name" label="Name" type="text" v-model="name"></v-text-field>
             <v-text-field ref="first" label="Message" type="text" v-model="message"></v-text-field>
-            <v-btn type="submit" class="primary">Send Socket</v-btn>
+            <v-btn type="submit" class="primary">Send Message</v-btn>
         </form>
         <br>
         <ul id="chat" v-for="item of datos" :key="item.id">
@@ -51,8 +51,8 @@
             }
         },
         mounted(){
-            socket.on('testForm', (obj)=>{
-                this.datos = obj;
+            socket.on('newTestForm', (obj)=>{
+                this.datos.push(obj);
             });
             this.$refs.name.focus();
         },

@@ -22,7 +22,7 @@
         data() {
             return {
                 about: 'This is a Little example about',
-                hero: 'How implement Socket.io on a Vue application',
+                hero: 'How to implement Socket.io on a Vue application',
                 data:'',
                 name:'',
                 apellido:'',

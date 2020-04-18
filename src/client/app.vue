@@ -7,7 +7,7 @@
                 <router-link class="nav-link" to="/">Home</router-link>
                 </li> -->
                 <li>
-                <router-link class="nav-link" to="/">Socket.io</router-link>
+                <router-link class="nav-link" to="/">Vue-Chat</router-link>
                 </li>
                 <li>
                 <router-link class="nav-link" to="/about">About</router-link>

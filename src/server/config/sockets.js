@@ -14,8 +14,7 @@ conn.test = (client, io)=>{
     
 conn.newTest = (client, io)=>{
     client.on('newTestForm', (obj, callback)=>{
-        messages.push(obj);
-        io.emit('testForm', messages);
+        io.emit('newTestForm', obj);
         callback({
             ok:true
         })
