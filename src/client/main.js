@@ -7,7 +7,7 @@ import Vuex from 'vuex';
 import store from './store';
 import vuetify from './plugins/vuetify';
 import io from 'socket.io-client';
-export const socket = io('localhost:8080');
+export const socket = io(process.env.SERVER_HOST);
 
 Vue.use(VueAxios, axios, Vuex);
 

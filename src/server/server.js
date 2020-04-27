@@ -9,7 +9,7 @@ const app = express();
 // const normalizePort = require('normalize-port');
 
 //Set up default mongoose connection
-var mongoDB = 'mongodb://127.0.0.1:27017/sockets';//base de datos local
+var mongoDB = `${process.env.DB_HOST}sockets`;//base de datos local
 // var user = '';
 // var password = '';
 // var mongoDB = 'mongodb+srv://'+user+':'+password+'@cluster0-srdla.mongodb.net/users?retryWrites=true&w=majority';//conexion remota MongoDB Atlas
@@ -31,8 +31,8 @@ app.use(cors());
 app.use(express.json());//procesar los datos en formato json
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));//static file for development
-// app.use(express.static(path.join(__dirname, '../../dist/index.html')));//static file for production
+app.use(express.static(path.join(__dirname,'../../dist')));
+app.use(express.static(path.join(__dirname,'../../public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('dist'));
