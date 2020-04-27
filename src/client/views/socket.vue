@@ -34,6 +34,7 @@
         },
         methods:{
             sendMessage(e){
+                console.log('este desmadre funciona');
                 e.preventDefault();
                 if(!this.message==''){
                     socket.emit('newTestForm',{
