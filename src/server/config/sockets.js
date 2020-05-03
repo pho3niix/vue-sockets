@@ -1,3 +1,5 @@
+const msgModel = require('../models/saveSome');
+
 var conn = {};
 
 conn.desconectar = (client, io)=>{

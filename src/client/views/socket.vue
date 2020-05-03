@@ -1,17 +1,18 @@
 <template>
     <div class="room">
-        <ul>
-            <li>Type a username into first input.</li>
-            <li>Type a message into second input.</li>
-            <li>Open this app on new window.</li>
-            <li>Finally press enter or click the button and see the magic.</li>
-        </ul>
-        <form @submit.prevent="sendMessage" autocomplete="off">
-            <v-text-field ref="name" label="Name" type="text" v-model="name"></v-text-field>
-            <v-text-field ref="first" label="Message" type="text" v-model="message"></v-text-field>
-            <v-btn type="submit" class="primary">Send Message</v-btn>
-        </form>
-        <br>
+        <div id="rest">
+            <ul id="how">
+                <li>Type a username into first input.</li>
+                <li>Type a message into second input.</li>
+                <li>Open this app on new window.</li>
+                <li>Finally press enter or click the button and see the magic.</li>
+            </ul>
+            <form id="forms" @submit.prevent="sendMessage" autocomplete="off">
+                <v-text-field ref="name" label="Name" type="text" v-model="name"></v-text-field>
+                <v-text-field ref="first" label="Message" type="text" v-model="message"></v-text-field>
+                <v-btn type="submit" class="primary">Send Message</v-btn>
+            </form>
+        </div>
         <div id="box-chat">
             <ul class="chat">
                 <li v-for="item of datos" :key="item.id" :style="color(item.name)">
@@ -103,9 +104,21 @@
         padding-left: 4vw;
         padding-right: 4vw;
         padding-top: 2vh;
+        #rest{
+            height: 47vh;
+            #how{
+                height: 35%;
+            }
+            #forms{
+                height: 65%;
+            }
+        }
         #box-chat{
             height: 40vh;
             overflow-y: auto;
+            &::-webkit-scrollbar {
+                display: none;
+            }
             .chat{
                 flex: 1 1 auto;
                 display: flex;
