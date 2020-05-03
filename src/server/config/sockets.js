@@ -5,12 +5,6 @@ conn.desconectar = (client, io)=>{
         console.log('Usuario desconectado');
     })
 }
-
-let messages = [];
-
-conn.test = (client, io)=>{
-    client.emit('testForm', messages);
-};
     
 conn.newTest = (client, io)=>{
     client.on('newTestForm', (obj, callback)=>{

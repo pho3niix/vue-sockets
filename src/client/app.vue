@@ -1,21 +1,21 @@
 <template>
     <v-app>
         <div id="app">
-        <nav id="nav">
-            <ul>
-                <!-- <li>
-                <router-link class="nav-link" to="/">Home</router-link>
-                </li> -->
-                <li>
-                <router-link class="nav-link" to="/">Vue-Chat</router-link>
-                </li>
-                <li>
-                <router-link class="nav-link" to="/about">About</router-link>
-                </li>
-            </ul>
-        </nav>
-        <router-view/>
-    </div>
+            <nav id="nav">
+                <ul>
+                    <!-- <li>
+                    <router-link class="nav-link" to="/">Home</router-link>
+                    </li> -->
+                    <li>
+                    <router-link class="nav-link" to="/">Vue-Chat</router-link>
+                    </li>
+                    <li>
+                    <router-link class="nav-link" to="/about">About</router-link>
+                    </li>
+                </ul>
+            </nav>
+            <router-view/>
+        </div>
     </v-app>
 </template>
 
@@ -53,7 +53,11 @@
 
     #app{
         height: 100vh;
-        overflow-x: hidden;
+        overflow: hidden;
+    }
+    
+    #app::-webkit-scrollbar {
+        display: none;
     }
 
     #nav{
