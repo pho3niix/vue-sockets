@@ -21,7 +21,7 @@
                             cols="12"
                             md="1"
                         >
-                            <v-text-field ref="name" label="Name" type="text" v-model="name"></v-text-field>
+                            <v-text-field ref="name" label="Name" type="text" v-model="name" readonly></v-text-field>
                         </v-col>
                         <v-col
                             cols="12"
@@ -51,7 +51,7 @@
         },
         data(){
             return{
-                name:'',
+                name:localStorage.getItem('token'),
                 message:'',
                 date:'',
                 datos:[],
@@ -103,7 +103,7 @@
             socket.on('newTestForm', (obj)=>{
                 this.datos.push(obj);
             });
-            this.$refs.name.focus();
+            this.$refs.first.focus();
         },
         filters:{
             mayus(value){
