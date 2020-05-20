@@ -5,7 +5,8 @@ import Vuetify,{
     VApp, 
     VTextField,
     VCol,
-    VRow
+    VRow,
+    VContainer
 } from 'vuetify/lib';
 import {Ripple} from 'vuetify/lib/directives'
 
@@ -15,7 +16,8 @@ Vue.use(Vuetify,{
         VApp,
         VTextField,
         VCol,
-        VRow
+        VRow,
+        VContainer
     },
     directives:{
         Ripple

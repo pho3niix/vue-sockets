@@ -53,7 +53,7 @@
 
     #app{
         height: 100vh;
-        overflow: hidden;
+        overflow-y: hidden;
     }
     
     #app::-webkit-scrollbar {

@@ -21,35 +21,6 @@
         },
         computed:{
 
-        },
-        beforeMount:{
-
-        },
-        mounted:{
-
-        },
-        beforeUpdate:{
-
-        },
-        updated:{
-
-        },
-        beforeCreate:{
-
-        },
-        created:{
-
-        },
-        beforeDestroy:{
-
-        },
-        destroyed:{
-
-        },
-        filters:{
-            mayus(i){
-                return i;
-            }
         }
     }
 </script>

@@ -1,25 +1,43 @@
 <template>
     <div class="room">
-        <div id="rest">
-            <ul id="how">
-                <li>Type a username into first input.</li>
-                <li>Type a message into second input.</li>
-                <li>Open this app on new window.</li>
-                <li>Finally press enter or click the button and see the magic.</li>
-            </ul>
-            <form id="forms" @submit.prevent="sendMessage" autocomplete="off">
-                <v-text-field ref="name" label="Name" type="text" v-model="name"></v-text-field>
-                <v-text-field ref="first" label="Message" type="text" v-model="message"></v-text-field>
-                <v-btn type="submit" class="primary">Send Message</v-btn>
-            </form>
-        </div>
         <div id="box-chat">
-            <ul class="chat">
-                <li v-for="item of datos" :key="item.id" :style="color(item.name)">
-                    <span id="username">{{item.name | mayus}}</span><br>
-                    <p id="message">{{item.message}}</p><br>
-                    <p id="date">{{item.date}}</p></li>
-            </ul>
+            <div id="nothing" v-if="datos.length==0">
+                <span>Send the first message</span>
+            </div>
+            <div v-else>
+                <ul class="chat">
+                    <li v-for="item of datos" :key="item.id" :style="color(item.name)">
+                        <span id="username">{{item.name | mayus}}</span><br>
+                        <p id="message">{{item.message}}</p><br>
+                        <p id="date">{{item.date}}</p></li>
+                </ul>
+            </div>
+        </div>
+        <div id="rest">
+            <form id="forms" @submit.prevent="sendMessage" autocomplete="off">
+                <v-container fluid>
+                    <v-row>
+                        <v-col
+                            cols="12"
+                            md="1"
+                        >
+                            <v-text-field ref="name" label="Name" type="text" v-model="name"></v-text-field>
+                        </v-col>
+                        <v-col
+                            cols="12"
+                            md="10"
+                        >
+                            <v-text-field ref="first" label="Message" type="text" v-model="message"></v-text-field>
+                        </v-col>
+                        <v-col
+                            cols="12"
+                            md="1"
+                        >
+                            <v-btn type="submit" class="primary">Send Message</v-btn>
+                        </v-col>
+                    </v-row>
+                </v-container>
+            </form>
         </div>
     </div>
 </template>
@@ -61,12 +79,12 @@
                 if(e==this.user){
                     return {
                         'background-color':'rgb(66, 185, 131)',
-                        'align-self':'flex-start'
+                        'align-self':'flex-end'
                     };
                 }else{
                     return {
                         'background-color':'rgb(143, 143, 143)',
-                        'align-self':'flex-end'
+                        'align-self':'flex-start'
                     };
                 }
             },
@@ -101,28 +119,45 @@
 <style lang="scss" scoped>
     .room{
         display: block;
-        padding-left: 4vw;
-        padding-right: 4vw;
-        padding-top: 2vh;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        height: 90vh;
+        overflow-y: hidden;
+        margin-top: 1vh;
         #rest{
-            height: 47vh;
-            #how{
-                height: 35%;
-            }
+            display: flex;
+            height: 8vh;
+            width: 96%;
+
             #forms{
-                height: 65%;
+                display: block;
+                width: 100%;
+                height: 18%;
             }
         }
         #box-chat{
-            height: 40vh;
+            height: 76vh;
             overflow-y: auto;
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column-reverse;
+            #nothing{
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span{
+                    font-size: 24px;
+                }
+            }
             &::-webkit-scrollbar {
                 display: none;
             }
             .chat{
                 flex: 1 1 auto;
                 display: flex;
-                flex-direction: column-reverse;
+                flex-direction: column;
                 background: white;
                 #username{
                     font-size: 12px;
