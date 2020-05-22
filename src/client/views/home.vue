@@ -49,7 +49,7 @@
                     name = name.toString();
                     let mayus = name.charAt(0).toUpperCase() + name.slice(1);
                     localStorage.setItem('token', mayus);
-                    
+                    this.$store.commit('setName', mayus)
                     this.$router.push({
                         name:'chat'
                     })

@@ -5,10 +5,12 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state:{
-
+        name:null
     },
     mutations:{
-
+        setName(state, name){
+            state.name = name;
+        }
     },
     actions:{
         

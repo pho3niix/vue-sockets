@@ -32,6 +32,7 @@ export default new Router({
         {
             path: '/',
             component: home,
+            name:'home',
             meta: {
                 title: 'Home Chat'
             }

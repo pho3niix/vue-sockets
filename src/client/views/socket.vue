@@ -17,23 +17,17 @@
             <form id="forms" @submit.prevent="sendMessage" autocomplete="off">
                 <v-container fluid>
                     <v-row>
-                        <v-col
-                            cols="12"
+                        <!-- <v-col
+                            lg="1"
                             md="1"
+                            class="d-sm-none"
                         >
                             <v-text-field ref="name" label="Name" type="text" v-model="name" readonly></v-text-field>
-                        </v-col>
+                        </v-col> -->
                         <v-col
                             cols="12"
-                            md="10"
                         >
                             <v-text-field ref="first" label="Message" type="text" v-model="message"></v-text-field>
-                        </v-col>
-                        <v-col
-                            cols="12"
-                            md="1"
-                        >
-                            <v-btn type="submit" class="primary">Send Message</v-btn>
                         </v-col>
                     </v-row>
                 </v-container>
@@ -117,78 +111,5 @@
 </script>
 
 <style lang="scss" scoped>
-    .room{
-        display: block;
-        padding-left: 1vw;
-        padding-right: 1vw;
-        height: 90vh;
-        overflow-y: hidden;
-        margin-top: 1vh;
-        #rest{
-            display: flex;
-            height: 8vh;
-            width: 96%;
-
-            #forms{
-                display: block;
-                width: 100%;
-                height: 18%;
-            }
-        }
-        #box-chat{
-            height: 76vh;
-            overflow-y: auto;
-            flex: 1 1 0;
-            display: flex;
-            flex-direction: column-reverse;
-            #nothing{
-                height: 100%;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                span{
-                    font-size: 24px;
-                }
-            }
-            &::-webkit-scrollbar {
-                display: none;
-            }
-            .chat{
-                flex: 1 1 auto;
-                display: flex;
-                flex-direction: column;
-                background: white;
-                #username{
-                    font-size: 12px;
-                    font-weight: 600;
-                }
-                #date{
-                        font-size: 12px;
-                        font-weight: 600;
-                        text-align: right;
-                        width: 100%;
-                        align-self: flex-start;
-                        padding: 0px;
-                        margin: 0px;
-                        margin-top: -5vh;
-                }
-                #message{
-                    width: 96%;
-                    position: relative;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                li{
-                    list-style: none;
-                    padding: 1vh;
-                    margin-bottom: 1.5vh;
-                    color:white;
-                    border-bottom-left-radius: 10px;
-                    border-top-right-radius: 10px;
-                    width: 50%;
-                }
-            }
-        }
-    }
+    @import '../styles/socket.scss';
 </style>
