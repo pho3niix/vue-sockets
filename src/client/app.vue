@@ -42,6 +42,9 @@
             ...mapState([
                 'name'
             ])
+        },
+        mounted(){
+            console.log('hello world');
         }
     }
 </script>
