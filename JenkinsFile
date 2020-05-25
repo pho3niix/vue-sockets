@@ -4,8 +4,11 @@ pipeline{
     stages {
         stage('testing'){
             steps{
-                echo 'Hello from dev'
+                echo "welcome to ${appname}"
             }
         }
+    }
+    environment{
+        appName = 'flunni'
     }
 }
