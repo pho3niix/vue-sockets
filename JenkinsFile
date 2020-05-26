@@ -5,6 +5,8 @@ pipeline{
         stage('testing'){
             steps{
                 echo "welcome to ${appname}"
+                sh 'node --version'
+                sh 'ls -la'
             }
         }
     }
