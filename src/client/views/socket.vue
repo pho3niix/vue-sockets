@@ -17,17 +17,10 @@
             <form id="forms" @submit.prevent="sendMessage" autocomplete="off">
                 <v-container fluid>
                     <v-row>
-                        <!-- <v-col
-                            lg="1"
-                            md="1"
-                            class="d-sm-none"
-                        >
-                            <v-text-field ref="name" label="Name" type="text" v-model="name" readonly></v-text-field>
-                        </v-col> -->
                         <v-col
                             cols="12"
                         >
-                            <v-text-field ref="first" label="Message" type="text" v-model="message"></v-text-field>
+                            <v-text-field hide-details ref="first" label="Message" type="text" v-model="message" single-line></v-text-field>
                         </v-col>
                     </v-row>
                 </v-container>
