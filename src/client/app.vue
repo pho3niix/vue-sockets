@@ -4,7 +4,7 @@
             <nav id="nav">
                 <ul>
                     <li>
-                        <span>Sander</span>
+                        <span>{{appName}}</span>
                     </li>
                     <li v-if="name">
                         <span id="name">{{name}}</span>
@@ -28,6 +28,7 @@
         },
         data(){
             return{
+                appName:process.env.appName
             }
         },
         methods:{
