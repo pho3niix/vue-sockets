@@ -51,15 +51,13 @@
                 e.preventDefault();
                 if(!this.message==''){
                     this.user = this.name;
-                    socket.emit('newTestForm',{
+                    socket.emit('message',{
                         name: this.name,
                         message: this.message,
                         date:this.time(new Date),
-                    }, 
-                    res=>{
-                        this.message='';
-                        this.$refs.first.focus();
-                    })
+                    });
+                    this.message='';
+                    this.$refs.first.focus();
                 }
             },
             color(e){
@@ -87,7 +85,8 @@
             }
         },
         mounted(){
-            socket.on('newTestForm', (obj)=>{
+            socket.on('send', (obj)=>{
+                console.log(obj);
                 this.datos.push(obj);
             });
             this.$refs.first.focus();

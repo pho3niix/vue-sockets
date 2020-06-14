@@ -9,11 +9,8 @@ conn.desconectar = (client, io)=>{
 }
     
 conn.newTest = (client, io)=>{
-    client.on('newTestForm', (obj, callback)=>{
-        io.emit('newTestForm', obj);
-        callback({
-            ok:true
-        })
+    client.on('message', obj=>{
+        io.emit('send', obj);
     })
 }
 
