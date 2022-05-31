@@ -8,11 +8,5 @@ pipeline {
       }
     }
 
-    stage('') {
-      steps {
-        mail(subject: 'Testing Mail', body: 'Hello from jenkins', cc: 'frijolito178@gmail.com', from: 'hugo.costillah@gmail.com')
-      }
-    }
-
   }
 }
