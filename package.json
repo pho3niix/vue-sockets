@@ -40,7 +40,7 @@
     "express-session": "^1.16.2",
     "http-errors": "^1.7.3",
     "lodash": "^4.17.15",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "mongod": "^2.0.0",
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
